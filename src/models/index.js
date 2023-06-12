@@ -1,2 +1,11 @@
 module.exports.Token = require('./token.model');
 module.exports.User = require('./user.model');
+module.exports.Tank = require('./tank.model');
+module.exports.Dispenser = require('./dispenser.model');
+module.exports.Nozel = require('./nozel.model');
+module.exports.DipChart = require('./dip_chart.model');
+module.exports.Supplier = require('./supplier.model');
+module.exports.Carriage = require('./carriage.model');
+module.exports.Salesman = require('./salesman.model');
+module.exports.Customer = require('./customer.model');
+module.exports.Employee = require('./customer.model');

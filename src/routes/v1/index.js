@@ -3,7 +3,9 @@ const authRoute = require('./auth.route');
 const userRoute = require('./user.route');
 const docsRoute = require('./docs.route');
 const config = require('../../config/config');
-
+const tankRoute = require('./tank.route')
+const dispenserRoute = require('./dispenser.route')
+const nozelRoute = require('./nozel.route')
 const router = express.Router();
 
 const defaultRoutes = [
@@ -14,6 +16,18 @@ const defaultRoutes = [
   {
     path: '/users',
     route: userRoute,
+  },
+  {
+    path: '/tanks',
+    route: tankRoute,
+  },
+  {
+    path: '/dispensers',
+    route: dispenserRoute,
+  },
+  {
+    path: '/nozels',
+    route: nozelRoute,
   },
 ];
 
