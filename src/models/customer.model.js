@@ -8,7 +8,7 @@ const customerSchema = mongoose.Schema(
       type:String
     },
     address:{
-      type:Number
+      type:String
     },
     phone:{type:String},
     vehicles:[{

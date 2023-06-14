@@ -60,7 +60,7 @@ const updateEmployeeById = async (employeeId, updateBody) => {
 const deleteEmployeeById = async (customerId) => {
   const customer = await getEmployeeById(customerId);
   if (!customer) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'customer not found');
+    throw new ApiError(httpStatus.NOT_FOUND, 'Employee not found');
   }
   await Employee.findOneAndUpdate({_id:customerId},{$set:{isDocDelete:true}},{new:true})
   return customer;

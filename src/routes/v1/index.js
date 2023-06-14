@@ -8,6 +8,10 @@ const dispenserRoute = require('./dispenser.route')
 const nozelRoute = require('./nozel.route')
 const productRoute = require('./product.route')
 const supplierRoute = require('./supplier.route')
+const carriageRoute = require('./carriage.route')
+const customerRoute = require('./customer.route')
+const salesmanRoute = require('./salesman.route')
+const employeeRoute = require('./employee.route')
 const router = express.Router();
 
 const defaultRoutes = [
@@ -38,6 +42,22 @@ const defaultRoutes = [
   {
     path: '/supplier',
     route: supplierRoute,
+  },
+  {
+    path: '/salesman',
+    route: salesmanRoute,
+  },
+  {
+    path: '/carriage',
+    route: carriageRoute,
+  },
+  {
+    path: '/customer',
+    route: customerRoute,
+  },
+  {
+    path: '/employee',
+    route: employeeRoute,
   },
 ];
 

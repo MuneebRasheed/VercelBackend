@@ -82,7 +82,7 @@ const updateSalesmanById = async (carriageId, updateBody) => {
  * @returns {Promise<User>}
  */
 const deleteSalesmanById = async (salesmanId) => {
-  const salesman = await getcarriageById(salesmanId);
+  const salesman = await getSalesmanById(salesmanId);
   if (!salesman) {
     throw new ApiError(httpStatus.NOT_FOUND, 'salesman not found');
   }

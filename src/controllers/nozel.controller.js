@@ -16,10 +16,12 @@ const createNozel = catchAsync(async(req,res)=>{
 
 
 const getNozels = catchAsync(async (req, res) => {
-  const filter = pick(req.query, ['name']);
+  const filter = pick(req.query, ['name','dispenser']);
   const options = pick(req.query, ['sortBy', 'limit', 'page','populate']);
   
-    const rgx = (pattern) => new RegExp(`.*${pattern}.*`);
+  if(filter.dispenser) filter.dispenser = ObjectId(filter.dispenser);
+
+  const rgx = (pattern) => new RegExp(`.*${pattern}.*`);
    
     if(filter.name){
       const searchRgx = rgx(filter.name) ;
@@ -32,7 +34,7 @@ const getNozels = catchAsync(async (req, res) => {
   });
   
 const getNozel = catchAsync(async (req, res) => {
-    const nozel = await nozelService.getNozelById(req.query.tankId);
+    const nozel = await nozelService.getNozelById(req.query.Id);
     if (!nozel) {
       throw new ApiError(httpStatus.NOT_FOUND, 'Nozel not found');
     }
@@ -41,14 +43,12 @@ const getNozel = catchAsync(async (req, res) => {
 
 const updateNozel = catchAsync(async (req, res) => {
     const body = req.body;
-    // const files=req.files;
-  const nozel = await nozelService.updateNozelById(req.query.nozelId, body);
+  const nozel = await nozelService.updateNozelById(req.query.Id, body);
   res.send(nozel);
 });
 
 const deleteNozel = catchAsync(async (req, res) => {
-  let nozel = await nozelService.deleteNozelById(req.query.tankId);
-  
+  let nozel = await nozelService.deleteNozelById(req.query.Id);
   res.status(httpStatus.OK).send({message: 'Nozel Deleted Successfully!',tank: nozel});
 });
 

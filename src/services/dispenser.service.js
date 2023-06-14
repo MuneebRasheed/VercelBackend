@@ -98,7 +98,7 @@ const deleteManyDispensers = async (dispenserIds) => {
  * @returns {Promise<User>}
  */
 const deleteDispenserById = async (dispenserId) => {
-  const dispenser = await getdispenserById(dispenserId);
+  const dispenser = await getDispenserById(dispenserId);
   if (!dispenser) {
     throw new ApiError(httpStatus.NOT_FOUND, 'dispenser not found');
   }

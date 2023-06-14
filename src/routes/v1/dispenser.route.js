@@ -10,7 +10,7 @@ router.post('/create',
   // auth('manageUsers'), validate(userValidation.createUser),
    dispenserController.createDispenser);
   
-router.get('/getDispensers',
+router.get('/getAll',
 // [
   // auth('manageUsers'),
   //  validate(productValidation.getProductsVS)   ],

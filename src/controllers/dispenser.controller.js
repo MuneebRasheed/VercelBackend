@@ -7,9 +7,9 @@ const EVENT = require('../triggers/custom-events').customEvent;
 
 const createDispenser = catchAsync(async(req,res)=>{
         let body = {...req.body}
-        let tank = await dispenserService.createDispenser(body);
+        let dispenser = await dispenserService.createDispenser(body);
   
-        res.status(httpStatus.CREATED).send({message:"Successfull",tank})
+        res.status(httpStatus.CREATED).send({message:"Successfull", dispenser})
     
   })
 
@@ -31,7 +31,7 @@ const getDispensers = catchAsync(async (req, res) => {
   });
   
 const getDispenser = catchAsync(async (req, res) => {
-    const dispenser = await dispenserService.getDispenserById(req.query.tankId);
+    const dispenser = await dispenserService.getDispenserById(req.query.Id);
     if (!dispenser) {
       throw new ApiError(httpStatus.NOT_FOUND, 'Dispenser not found');
     }
@@ -41,14 +41,14 @@ const getDispenser = catchAsync(async (req, res) => {
 const updateDispenser = catchAsync(async (req, res) => {
     const body = req.body;
     // const files=req.files;
-  const dispenser = await dispenserService.updateDispenserById(req.query.dispenserId, body);
+  const dispenser = await dispenserService.updateDispenserById(req.query.Id, body);
   res.send(dispenser);
 });
 
 const deleteDispenser = catchAsync(async (req, res) => {
-  let dispenser = await dispenserService.deleteTankById(req.query.tankId);
+  let dispenser = await dispenserService.deleteDispenserById(req.query.Id);
   
-  res.status(httpStatus.OK).send({message: 'Tank Deleted Successfully!', dispenser});
+  res.status(httpStatus.OK).send({message: 'Dispenser Deleted Successfully!', dispenser});
 });
 
 

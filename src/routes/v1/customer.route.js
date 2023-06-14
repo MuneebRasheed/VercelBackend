@@ -2,31 +2,31 @@ const express = require('express');
 const {auth} = require('../../middlewares/auth');
 const validate = require('../../middlewares/validate');
 // const tankValidation = require('../../validations/product.validation');
-const nozelController = require('../../controllers/nozel.controller');
+const customerController = require('../../controllers/customer.controller');
 
 const router = express.Router();
 
 router.post('/create',
   // auth('manageUsers'), validate(userValidation.createUser),
-   nozelController.createNozel);
+   customerController.createCustomer);
   
 router.get('/getAll',
 // [
   // auth('manageUsers'),
   //  validate(productValidation.getProductsVS)   ],
-   nozelController.getNozels)
+   customerController.getCustomers)
 
 // router.route('/:userId').delete(auth('manageUsers'), validate(userValidation.deleteUser), userController.getUser);
 router.get('/details', 
 // validate(userValidation.getUser),
-   nozelController.getNozel);
+   customerController.getCustomer);
 
 router.put('/update',
 //  [auth('manageUsers'), validate(userValidation.updateUser)],
-   nozelController.updateNozel);
+   customerController.updateCustomer);
 
    router.delete('/delete',
 //  [auth('manageUsers'), validate(userValidation.updateUser)],
-   nozelController.deleteNozel);
+   customerController.deleteCustomer);
   
 module.exports = router;

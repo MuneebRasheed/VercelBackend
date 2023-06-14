@@ -82,7 +82,7 @@ const updateCarriageById = async (carriageId, updateBody) => {
  * @returns {Promise<User>}
  */
 const deleteCarriageById = async (carriageId) => {
-  const carriage = await getcarriageById(carriageId);
+  const carriage = await getCarriageById(carriageId);
   if (!carriage) {
     throw new ApiError(httpStatus.NOT_FOUND, 'carriage not found');
   }

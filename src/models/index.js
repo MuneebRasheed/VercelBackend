@@ -8,5 +8,5 @@ module.exports.Supplier = require('./supplier.model');
 module.exports.Carriage = require('./carriage.model');
 module.exports.Salesman = require('./salesman.model');
 module.exports.Customer = require('./customer.model');
-module.exports.Employee = require('./customer.model');
+module.exports.Employee = require('./employee.model');
 module.exports.Product = require('./product.model');

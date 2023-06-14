@@ -58,7 +58,7 @@ const updateCustomerById = async (customerId, updateBody) => {
  * @returns {Promise<User>}
  */
 const deleteCustomerById = async (customerId) => {
-  const customer = await getcarriageById(customerId);
+  const customer = await getCustomerById(customerId);
   if (!customer) {
     throw new ApiError(httpStatus.NOT_FOUND, 'customer not found');
   }
@@ -70,10 +70,10 @@ const deleteCustomerById = async (customerId) => {
 
 
 module.exports = {
-  createSalesman: createCustomer,
-  querySalesman: queryCustomer,
-  getSalesmanById: getCustomerById,
-  updateSalesmanById: updateCustomerById,
-  deleteSalesmanById: deleteCustomerById,
+  createCustomer,
+  queryCustomer,
+  getCustomerById,
+  updateCustomerById,
+  deleteCustomerById,
 
 };
