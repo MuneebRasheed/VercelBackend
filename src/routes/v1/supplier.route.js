@@ -1,33 +1,33 @@
 const express = require('express');
 const {auth} = require('../../middlewares/auth');
 const validate = require('../../middlewares/validate');
-// const productValidation = require('../../validations/product.validation');
-const productController = require('../../controllers/product.controller');
+// const SupplierValidation = require('../../validations/Supplier.validation');
+const supplierController = require('../../controllers/supplier.controller');
 
 const router = express.Router();
 
 router.post('/create',
   // auth('manageUsers'), validate(userValidation.createUser),
-   productController.createProduct);
+   supplierController.create);
   
-router.get('/getProducts',
+router.get('/getAll',
 // [
   // auth('manageUsers'),
-  //  validate(productValidation.getProductsVS)   ],
-   productController.getProducts)
+  //  validate(SupplierValidation.getSuppliersVS)   ],
+   supplierController.getSuppliers)
 
 // router.route('/:userId').delete(auth('manageUsers'), validate(userValidation.deleteUser), userController.getUser);
 router.get('/details', 
 // validate(userValidation.getUser),
-   productController.getProduct);
+   supplierController.getSupplier);
 
 router.put('/update',
 //  [auth('manageUsers'), validate(userValidation.updateUser)],
-   productController.updateProduct);
+   supplierController.updateSupplier);
 
    router.delete('/delete',
 //  [auth('manageUsers'), validate(userValidation.updateUser)],
-   productController.deleteProduct);
+   supplierController.deleteSupplier);
    
    
 module.exports = router;

@@ -6,6 +6,8 @@ const config = require('../../config/config');
 const tankRoute = require('./tank.route')
 const dispenserRoute = require('./dispenser.route')
 const nozelRoute = require('./nozel.route')
+const productRoute = require('./product.route')
+const supplierRoute = require('./supplier.route')
 const router = express.Router();
 
 const defaultRoutes = [
@@ -18,16 +20,24 @@ const defaultRoutes = [
     route: userRoute,
   },
   {
-    path: '/tanks',
+    path: '/tank',
     route: tankRoute,
   },
   {
-    path: '/dispensers',
+    path: '/dispenser',
     route: dispenserRoute,
   },
   {
-    path: '/nozels',
+    path: '/nozel',
     route: nozelRoute,
+  },
+  {
+    path: '/product',
+    route: productRoute,
+  },
+  {
+    path: '/supplier',
+    route: supplierRoute,
   },
 ];
 

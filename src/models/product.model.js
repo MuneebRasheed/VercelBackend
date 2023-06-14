@@ -13,11 +13,6 @@ const productSchema = mongoose.Schema(
         },
     // category:{type:String},
     // parent:{type:String},
-    // sku:{type:String},
-    // barcode:{type:String},
-    // unit:{type:String},
-    // tax:{type:String},
-    // amount:String,
     selling_rate:{type:Number},
     purchase_rate:{type:Number},
     image:{
@@ -25,18 +20,7 @@ const productSchema = mongoose.Schema(
       required:false,
       default:''
     },
-    // options:[{
-    //   option_name:String,
-    //   option_value:[String]
-    // }],
-    // variations:[{
-    //   type: mongoose.SchemaTypes.ObjectId , ref:'Product'
-    // }],
-    // variation_price:String,
-    // variation_barcode:String,
-    // is_parent_product:{type:Boolean,default:false},
-    // parent_product_name:String,
-    // parent_product_id:mongoose.SchemaTypes.ObjectId,
+
     
     // logical fields
     isDocDelete:{

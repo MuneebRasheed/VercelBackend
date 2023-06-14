@@ -8,7 +8,7 @@ const {ObjectId} = require('mongodb')
 const EVENT = require('../triggers/custom-events').customEvent;
 
 const createTank = catchAsync(async(req,res)=>{
-        let body = {...req}
+        let body = {...req.body}
         let tank = await tankService.createTank(body);
   
         res.status(httpStatus.CREATED).send({message:"Successfull",tank})
@@ -16,7 +16,7 @@ const createTank = catchAsync(async(req,res)=>{
   })
 
 const addDipChart = catchAsync(async(req,res)=>{
-      let body = {...req}
+      let body = {...req.body}
       let tank = await tankService.addDipChart(body);
       res.status(httpStatus.CREATED).send({message:"Successfull",tank})
   })
@@ -52,9 +52,9 @@ const getDipCharts = catchAsync(async (req, res) => {
   });
   
 const getTank = catchAsync(async (req, res) => {
-    const tank = await tankService.getTankById(req.query.tankId);
+    const tank = await tankService.getTankById(req.query.Id);
     if (!tank) {
-      throw new ApiError(httpStatus.NOT_FOUND, 'Product not found');
+      throw new ApiError(httpStatus.NOT_FOUND, 'Tank not found');
     }
     res.send({ status: true, message: 'Successfull', tank });
 });
@@ -62,14 +62,14 @@ const getTank = catchAsync(async (req, res) => {
 const updateTank = catchAsync(async (req, res) => {
     const body = req.body;
     // const files=req.files;
-  const tank = await tankService.updateTankById(req.query.tankId, body);
+  const tank = await tankService.updateTankById(req.query.Id, body);
   res.send(tank);
 });
 
 const updateDipChart = catchAsync(async (req, res) => {
     const body = req.body;
     // const files=req.files;
-  const dipChart = await tankService.updateDipChart(req.query.dipChartId, body);
+  const dipChart = await tankService.updateDipChart(req.query.Id, body);
   res.send(dipChart);
 });
 
@@ -79,18 +79,11 @@ const updateTankMany = catchAsync (async (req,res)=>{
 })
 
 const deleteTank = catchAsync(async (req, res) => {
-  let tank
-  if(req.body.tankIds?.length){
-    await tankService.deleteTanks(req.body.tankIds);
-  }else{
-    tank = await tankService.deleteTankById(req.query.tankId);
-  }
-  
-  res.status(httpStatus.OK).send({message: 'Tank Deleted Successfully!'});
+  let tank = await tankService.deleteTankById(req.query.Id);
+  res.status(httpStatus.OK).send({message: 'Tank Deleted Successfully!',tank});
 });
 
 const deleteDipChart = catchAsync(async (req, res) => {
-
   let dipchart = await tankService.deleteDipChart(req.query.dipchart);
   res.status(httpStatus.OK).send({message: 'Dip Deleted Successfully!', dipchart});
 });

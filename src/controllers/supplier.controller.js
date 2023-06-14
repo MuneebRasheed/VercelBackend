@@ -6,7 +6,7 @@ const { supplierService } = require('../services');
 const EVENT = require('../triggers/custom-events').customEvent;
 
 const create = catchAsync(async(req,res)=>{
-        let body = {...req}
+        let body = {...req.body}
         let tank = await supplierService.createSupplier(body);
   
         res.status(httpStatus.CREATED).send({message:"Successfull",tank})
@@ -30,8 +30,8 @@ const getSuppliers = catchAsync(async (req, res) => {
       res.status(httpStatus.OK).send(result);
   });
   
-const getSupplierById = catchAsync(async (req, res) => {
-    const supplier = await supplierService.getSupplierById(req.query.tankId);
+const getSupplier = catchAsync(async (req, res) => {
+    const supplier = await supplierService.getSupplierById(req.query.Id);
     if (!supplier) {
       throw new ApiError(httpStatus.NOT_FOUND, 'Supplier not found');
     }
@@ -41,23 +41,22 @@ const getSupplierById = catchAsync(async (req, res) => {
 const updateSupplier = catchAsync(async (req, res) => {
     const body = req.body;
     // const files=req.files;
-  const supplier = await supplierService.updateSupplierById(req.query.supplierId, body);
+  const supplier = await supplierService.updateSupplierById(req.query.Id, body);
   res.send(supplier);
 });
 
-const deleteDispenser = catchAsync(async (req, res) => {
-  let dispenser = await supplierService.deleteTankById(req.query.tankId);
-  
-  res.status(httpStatus.OK).send({message: 'Tank Deleted Successfully!', dispenser});
+const deleteSupplier = catchAsync(async (req, res) => {
+  let dispenser = await supplierService.deleteSupplierById(req.query.Id);
+  res.status(httpStatus.OK).send({message: 'Supplier Deleted Successfully!', dispenser});
 });
 
 
 module.exports = {
-    createDispenser,
-    getDispensers: getSuppliers,
-    getDispenser,
-    updateDispenser: updateSupplier,
-    deleteDispenser,
+    create,
+    getSuppliers,
+    getSupplier,
+    updateSupplier,
+    deleteSupplier,
 
   };
   

@@ -20,7 +20,7 @@ const addDipChart = async (userBody) => {
 
 const updateDipChart = async (id,body) => {
       const updateDipChart = await DipChart.findByIdAndUpdate(id,body,{new:true});
-      return updateDipChart.toObject();
+      return updateDipChart
 };
 
 const deleteDipChart = async (id,body) => {
@@ -49,6 +49,11 @@ const createManyTanks = async (tanks)=>{
 const queryTanks = async (filter, options) => {
   const tanks = await Tank.paginate(filter, options);
   return tanks;
+};
+
+const getDipCharts = async (filter, options) => {
+  const dips = await DipChart.paginate(filter, options);
+  return dips;
 };
 
 /**
@@ -141,6 +146,7 @@ module.exports = {
   searchProductsByName,
   deleteManyTanks,
   addDipChart,
+  getDipCharts,
   updateDipChart,
   deleteDipChart
 };

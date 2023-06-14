@@ -14,7 +14,7 @@ router.post('/add-dip',
   // auth('manageUsers'), validate(userValidation.createUser),
    tankController.addDipChart);
   
-router.get('/getTanks',
+router.get('/getAll',
 // [
   // auth('manageUsers'),
   //  validate(productValidation.getProductsVS)   ],
@@ -35,7 +35,7 @@ router.put('/update',
 //  [auth('manageUsers'), validate(userValidation.updateUser)],
    tankController.updateTank);
 
-router.put('/update',
+router.put('/updateDip',
 //  [auth('manageUsers'), validate(userValidation.updateUser)],
    tankController.updateDipChart);
 
@@ -43,7 +43,7 @@ router.put('/update',
 //  [auth('manageUsers'), validate(userValidation.updateUser)],
    tankController.deleteTank);
 
-   router.delete('/delete',
+   router.delete('/deleteDip',
 //  [auth('manageUsers'), validate(userValidation.updateUser)],
    tankController.deleteDipChart);
   

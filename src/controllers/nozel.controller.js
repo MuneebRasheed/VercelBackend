@@ -7,7 +7,7 @@ const { nozelService } = require('../services');
 const EVENT = require('../triggers/custom-events').customEvent;
 
 const createNozel = catchAsync(async(req,res)=>{
-        let body = {...req}
+        let body = {...req.body}
         let nozel = await nozelService.createNozel(body);
   
         res.status(httpStatus.CREATED).send({message:"Successfull",nozel})

@@ -6,7 +6,7 @@ const { dispenserService } = require('../services');
 const EVENT = require('../triggers/custom-events').customEvent;
 
 const createDispenser = catchAsync(async(req,res)=>{
-        let body = {...req}
+        let body = {...req.body}
         let tank = await dispenserService.createDispenser(body);
   
         res.status(httpStatus.CREATED).send({message:"Successfull",tank})
