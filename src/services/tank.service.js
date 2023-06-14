@@ -23,9 +23,9 @@ const updateDipChart = async (id,body) => {
       return updateDipChart
 };
 
-const deleteDipChart = async (id,body) => {
+const deleteDipChart = async (id) => {
       const deleteDipChart = await DipChart.findByIdAndDelete(id);
-      return deleteDipChart.toObject();
+      return deleteDipChart;
 };
 
 /**

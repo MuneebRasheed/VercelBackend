@@ -39,7 +39,7 @@ const getTanks = catchAsync(async (req, res) => {
   });
 
 const getDipCharts = catchAsync(async (req, res) => {
-  const filter = pick(req.query, ['tank']);
+  const filter = pick(req.query, ['tank','level']);
   const options = pick(req.query, ['sortBy', 'limit', 'page','populate']);
     
     if(filter.tank){
@@ -47,7 +47,7 @@ const getDipCharts = catchAsync(async (req, res) => {
     }
     filter.isDocDelete = false 
 
-      const result = await tankService.queryTanks(filter, options);
+      const result = await tankService.getDipCharts(filter, options);
       res.status(httpStatus.OK).send(result);
   });
   
@@ -84,7 +84,7 @@ const deleteTank = catchAsync(async (req, res) => {
 });
 
 const deleteDipChart = catchAsync(async (req, res) => {
-  let dipchart = await tankService.deleteDipChart(req.query.dipchart);
+  let dipchart = await tankService.deleteDipChart(req.query.Id);
   res.status(httpStatus.OK).send({message: 'Dip Deleted Successfully!', dipchart});
 });
 
