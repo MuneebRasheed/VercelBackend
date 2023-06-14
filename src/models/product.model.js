@@ -11,7 +11,7 @@ const productSchema = mongoose.Schema(
           required:false,
           trim:true,
         },
-    // category:{type:String},
+    type:{type:String},
     // parent:{type:String},
     selling_rate:{type:Number},
     purchase_rate:{type:Number},

@@ -10,6 +10,7 @@ var ObjectId = require('mongodb').ObjectID;
  */
 const createProduct = async (userBody) => {
       const product = await Product.create(userBody);
+      console.log(product)
       return product.toObject();
 };
 
