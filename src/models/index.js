@@ -10,3 +10,7 @@ module.exports.Salesman = require('./salesman.model');
 module.exports.Customer = require('./customer.model');
 module.exports.Employee = require('./employee.model');
 module.exports.Product = require('./product.model');
+module.exports.FuelPurchase = require('./fuel_purchase.model');
+module.exports.OtherPurchase = require('./other_purchase.model');
+module.exports.OtherSale = require('./other_sale.model');
+module.exports.FuelSale = require('./fuel_sale.model');

@@ -11,3 +11,5 @@ module.exports.carriageService = require('./carriage.service');
 module.exports.salesmanService = require('./salesman.service');
 module.exports.employeeService = require('./employee.service');
 module.exports.customerService = require('./customer.service');
+module.exports.purchaseService = require('./purchase.service');
+module.exports.saleService = require('./sale.service');
