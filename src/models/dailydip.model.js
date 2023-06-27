@@ -3,19 +3,23 @@ const { toJSON, paginate } = require('./plugins');
 
 const dailydipSchema = mongoose.Schema(
   {
-    
-    name:{
-      type:String
+    tank: {
+      type: String,
     },
-    address:{
-      type:String
+    dipLevel: {
+      type: String,
     },
-    phone:{type:String},
-    isDocDelete:{
+    physicalQTY: { type: String },
+    CalculatedQTY: {
+      type: String,
+    },
+    amount: { type: String },
+    date:{type:Date},
+    calcultedMethod:{type: String },
+    isDocDelete: {
       type: Boolean,
-      default:false
+      default: false,
     },
-    
   },
   {
     timestamps: true,
@@ -25,7 +29,6 @@ const dailydipSchema = mongoose.Schema(
 // add plugin that converts mongoose to json
 dailydipSchema.plugin(toJSON);
 dailydipSchema.plugin(paginate);
-
 
 /**
  * @typedef User

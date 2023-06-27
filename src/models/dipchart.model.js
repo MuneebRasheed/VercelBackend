@@ -4,13 +4,13 @@ const { toJSON, paginate } = require('./plugins');
 const dipchartSchema = mongoose.Schema(
   {
     
-    name:{
+    tank:{
       type:String
     },
-    address:{
+    dipLevel:{
       type:String
     },
-    phone:{type:String},
+    liters:{type:String},
     isDocDelete:{
       type: Boolean,
       default:false
