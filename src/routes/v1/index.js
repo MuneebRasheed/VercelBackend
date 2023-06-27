@@ -14,6 +14,8 @@ const dipchartRoute = require('./dipchart.route')
 const customerRoute = require('./customer.route')
 const salesmanRoute = require('./salesman.route')
 const employeeRoute = require('./employee.route')
+const purchaseRoute = require('./purchase.route')
+const saleRoute = require('./sale.route')
 const router = express.Router();
 
 const defaultRoutes = [
@@ -68,6 +70,14 @@ const defaultRoutes = [
   {
     path: '/employee',
     route: employeeRoute,
+  },
+  {
+    path: '/purchase',
+    route: purchaseRoute,
+  },
+  {
+    path: '/sale',
+    route: saleRoute,
   },
 ];
 
