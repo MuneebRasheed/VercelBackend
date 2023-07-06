@@ -9,6 +9,8 @@ const nozelRoute = require('./nozel.route')
 const productRoute = require('./product.route')
 const supplierRoute = require('./supplier.route')
 const carriageRoute = require('./carriage.route')
+const dailydipRoute = require('./dailydip.route')
+const dipchartRoute = require('./dipchart.route')
 const customerRoute = require('./customer.route')
 const salesmanRoute = require('./salesman.route')
 const employeeRoute = require('./employee.route')
@@ -52,6 +54,14 @@ const defaultRoutes = [
   {
     path: '/carriage',
     route: carriageRoute,
+  },
+  {
+    path: '/dailydip',
+    route: dailydipRoute,
+  },
+  {
+    path: '/dipchart',
+    route: dipchartRoute,
   },
   {
     path: '/customer',
