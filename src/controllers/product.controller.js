@@ -14,6 +14,7 @@ const createProduct = catchAsync(async(req,res)=>{
 
 
 const getProducts = catchAsync(async (req, res) => {
+  console.log("testing get product")
   const filter = pick(req.query, ['name', ]);
   const options = pick(req.query, ['sortBy', 'limit', 'page','populate']);
   

@@ -9,13 +9,13 @@ const router = express.Router();
 router
   .route('/')
   .post(validate(userValidation.createUser),userController.createUser)
-  .get(userController.getUsers);
+  .get(validate(userValidation.getUsers),userController.getUsers);
 
 router
   .route('/:userId')
-  .get(userController.getUser)
-  .patch(userController.updateUser)
-  .delete(userController.deleteUser);
+  .get(validate(userValidation.getUser),userController.getUser)
+  .patch(validate(userValidation.updateUser),userController.updateUser)
+  .delete(validate(userValidation.deleteUser),userController.deleteUser);
 
 
 //   router

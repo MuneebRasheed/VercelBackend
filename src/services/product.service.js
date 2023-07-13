@@ -12,6 +12,7 @@ const createProduct = async (userBody) => {
       const product = await Product.create(userBody);
       console.log(product)
       return product.toObject();
+
 };
 
 /**
@@ -44,10 +45,12 @@ const queryProducts = async (filter, options) => {
  */
 const getProductById = async (id) => {
   return await Product.findById(id).lean();
+  
 };
 
 const productExists = async (id) => {
   let product = await Product.findById(id).lean();
+  console.log("products test")
   if(!product){
     throw new ApiError(httpStatus.BAD_REQUEST,`Product with ${id} not exists`)
   }

@@ -15,3 +15,4 @@ module.exports.employeeService = require('./employee.service');
 module.exports.customerService = require('./customer.service');
 module.exports.purchaseService = require('./purchase.service');
 module.exports.saleService = require('./sale.service');
+module.exports.roleService = require('./role.service');
