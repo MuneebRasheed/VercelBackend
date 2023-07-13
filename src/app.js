@@ -45,7 +45,7 @@ app.use(compression());
 // app.use(cors());
 // app.options('*', cors());
 const corsOptions = {
-  origin: ["https://pos-fe-omega.vercel.app/", "http://localhost:3000/"]
+  origin: ["https://posale-bk-z2g2.vercel.app/", "http://localhost:3000/"]
 };
 
 app.use(cors(corsOptions));
