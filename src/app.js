@@ -42,8 +42,15 @@ app.use(mongoSanitize());
 app.use(compression());
 
 // enable cors
-app.use(cors());
-app.options('*', cors());
+// app.use(cors());
+// app.options('*', cors());
+const corsOptions = {
+  origin: ["https://pos-fe-omega.vercel.app/", "http://localhost:3000/"]
+};
+
+app.use(cors(corsOptions));
+// app.options('*', cors(corsOptions));
+
 
 // jwt authentication
 app.use(passport.initialize());
