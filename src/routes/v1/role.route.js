@@ -17,15 +17,15 @@ router.get('/getAll',
    rolesController.getRoles)
 
 // router.route('/:userId').delete(auth('manageUsers'), validate(userValidation.deleteUser), userController.getUser);
-router.get('/details', 
+router.get('/details/:id', 
 // validate(userValidation.getUser),
    rolesController.getRole);
 
-router.put('/update',
+router.put('/update/:id',
 //  [auth('manageUsers'), validate(userValidation.updateUser)],
    rolesController.updateRole);
 
-   router.delete('/delete',
+   router.delete('/delete/:id',
 //  [auth('manageUsers'), validate(userValidation.updateUser)],
    rolesController.deleteRole);
   

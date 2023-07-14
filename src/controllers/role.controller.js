@@ -25,13 +25,13 @@ const getRole = catchAsync(async (req, res) => {
 });
 
 const updateRole = catchAsync(async (req, res) => {
-  const user = await roleService.updateRolesById(req.params.userId, req.body);
+  const user = await roleService.updateRolesById(req.params.id, req.body);
   res.send(user);
 });
 
 const deleteRole = catchAsync(async (req, res) => {
-  await roleService.deleteRoleById(req.params.userId);
-  res.status(httpStatus.NO_CONTENT).send();
+  await roleService.deleteRoleById(req.params.id);
+  res.status(httpStatus.NO_CONTENT).send("Delete User");
 });
 
 module.exports = {

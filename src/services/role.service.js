@@ -61,12 +61,12 @@ const getRoleById = async (id) => {
 
 /**
  * Update user by id
- * @param {ObjectId} userId
+ * @param {ObjectId} id
  * @param {Object} updateBody
  * @returns {Promise<Product>}
  */
-const updateRolesById = async (userId, updateBody) => {
-  const role = await Roles.findByIdAndUpdate(userId,updateBody, {
+const updateRolesById = async (id, updateBody) => {
+  const role = await Roles.findByIdAndUpdate(id,updateBody, {
     new: true,
   });
   return role;
@@ -74,15 +74,15 @@ const updateRolesById = async (userId, updateBody) => {
 
 /**
  * Delete product by id
- * @param {ObjectId} userId
+ * @param {ObjectId} id
  * @returns {Promise<User>}
  */
-const deleteRoleById = async (userId) => {
-  const role = await getRoleById(userId);
+const deleteRoleById = async (id) => {
+  const role = await getRoleById(id);
   if (!role) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'Roles not found');
+    throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
   }
-  await Roles.findOneAndUpdate({_id:salesmanId},{$set:{isDocDelete:true}},{new:true})
+  await role.remove();
   return role;
 };
 
