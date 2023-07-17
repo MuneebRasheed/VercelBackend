@@ -17,3 +17,4 @@ module.exports.OtherPurchase = require('./other_purchase.model');
 module.exports.OtherSale = require('./other_sale.model');
 module.exports.FuelSale = require('./fuel_sale.model');
 module.exports.Roles = require('./role.model');
+module.exports.Shift = require('./shift.model');

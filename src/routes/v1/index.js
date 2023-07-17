@@ -17,6 +17,7 @@ const customerRoute = require('./customer.route')
 const salesmanRoute = require('./salesman.route')
 const employeeRoute = require('./employee.route')
 const purchaseRoute = require('./purchase.route')
+const shiftRoute = require('./shift.route')
 const saleRoute = require('./sale.route')
 const router = express.Router();
 
@@ -60,6 +61,10 @@ const defaultRoutes = [
   {
     path: '/salesman',
     route: salesmanRoute,
+  },
+  {
+    path: '/shift',
+    route: shiftRoute,
   },
   {
     path: '/carriage',
