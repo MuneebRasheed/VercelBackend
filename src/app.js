@@ -45,13 +45,15 @@ app.use(compression());
 // app.use(cors());
 // app.options('*', cors());
 const corsOptions = {
-  origin: ["https://posale-bk-z2g2.vercel.app/", "http://localhost:3000/"]
+  origin: ["https://posale-bk-z2g2.vercel.app", "http://localhost:3000"],
 };
 
+
 app.use(cors(corsOptions));
+app.options(cors(corsOptions));
 
-// app.options('*', cors(corsOptions));
-
+// app.use(cors());
+// app.options('http://localhost:3000', cors());
 
 // jwt authentication
 app.use(passport.initialize());
