@@ -17,3 +17,4 @@ module.exports.purchaseService = require('./purchase.service');
 module.exports.saleService = require('./sale.service');
 module.exports.roleService = require('./role.service');
 module.exports.shiftService = require('./shift.service');
+module.exports.sale_Return_Service = require('./sale_return.service');
