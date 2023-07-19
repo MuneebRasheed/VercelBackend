@@ -25,6 +25,20 @@ if (config.env !== 'test') {
   app.use(morgan.errorHandler);
 }
 
+// enable cors
+// app.use(cors());
+// app.options('*', cors());
+const corsOptions = {
+  origin: ["https://posale-bk-z2g2.vercel.app", "http://localhost:3000","http://localhost:3001"],
+};
+
+
+app.use(cors(corsOptions));
+app.options(cors(corsOptions));
+
+// app.use(cors());
+// app.options('http://localhost:3000', cors());
+
 // set security HTTP headers
 app.use(helmet());
 
@@ -41,19 +55,7 @@ app.use(mongoSanitize());
 // gzip compression
 app.use(compression());
 
-// enable cors
-// app.use(cors());
-// app.options('*', cors());
-const corsOptions = {
-  origin: ["https://posale-bk-z2g2.vercel.app", "http://localhost:3000"],
-};
 
-
-app.use(cors(corsOptions));
-app.options(cors(corsOptions));
-
-// app.use(cors());
-// app.options('http://localhost:3000', cors());
 
 // jwt authentication
 app.use(passport.initialize());
