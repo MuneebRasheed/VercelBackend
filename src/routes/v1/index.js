@@ -20,6 +20,7 @@ const purchaseRoute = require('./purchase.route')
 const shiftRoute = require('./shift.route')
 const saleRoute = require('./sale.route')
 const saleReturnRoute = require('./sale_return.route')
+const expire_brkgeRoute = require('./expire_brkge.route')
 const router = express.Router();
 
 const defaultRoutes = [
@@ -42,6 +43,10 @@ const defaultRoutes = [
   {
     path: '/sale_return',
     route: saleReturnRoute,
+  },
+  {
+    path: '/expire_brkge',
+    route: expire_brkgeRoute,
   },
   {
     path: '/tank',

@@ -4,10 +4,12 @@ const { toJSON, paginate } = require('./plugins');
 const saleReturnSchema = mongoose.Schema(
   {
     customer_Id:{
-      type:String
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"Customer"
     },
     product_Name:{
-      type:String
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"Product"
     },
     address:{
       type:String
