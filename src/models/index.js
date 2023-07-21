@@ -20,3 +20,4 @@ module.exports.Roles = require('./role.model');
 module.exports.Shift = require('./shift.model');
 module.exports.sale_return=require("./sale_return.model")
 module.exports.expire_brkge=require("./expire_brkge.model")
+module.exports.Customer_leadger=require("./customer_leadger.model")
