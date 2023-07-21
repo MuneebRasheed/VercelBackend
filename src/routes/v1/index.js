@@ -22,6 +22,7 @@ const saleRoute = require('./sale.route')
 const saleReturnRoute = require('./sale_return.route')
 const expire_brkgeRoute = require('./expire_brkge.route')
 const customer_leadgerroute = require('./CustomerLeadger.route')
+const employee_transecgtionroute = require('./employee_transection.route')
 const router = express.Router();
 
 const defaultRoutes = [
@@ -32,6 +33,10 @@ const defaultRoutes = [
   {
     path: '/customer_leadger',
     route: customer_leadgerroute,
+  },
+  {
+    path: '/employee_transection',
+    route: employee_transecgtionroute,
   },
   {
     path: '/users',

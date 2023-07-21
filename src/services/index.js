@@ -20,3 +20,4 @@ module.exports.shiftService = require('./shift.service');
 module.exports.sale_Return_Service = require('./sale_return.service');
 module.exports.expire_brkge_Service = require('./expire_brkge.service');
 module.exports.customer_leadger_Service = require('./customer_leadger.service');
+module.exports.employee_transection_Service = require('./employee_transection.service');
