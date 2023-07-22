@@ -24,6 +24,7 @@ const expire_brkgeRoute = require('./expire_brkge.route')
 const customer_leadgerroute = require('./CustomerLeadger.route')
 const employee_transecgtionroute = require('./employee_transection.route')
 const fuel_Transfer_route = require('./fuel_transfer.route')
+const service_station_route = require('./service_station.route')
 const router = express.Router();
 
 const defaultRoutes = [
@@ -35,7 +36,6 @@ const defaultRoutes = [
     path: '/customer_leadger',
     route: customer_leadgerroute,
   },
-  ,
   {
     path: '/fuel_transfer',
     route: fuel_Transfer_route,
@@ -47,6 +47,10 @@ const defaultRoutes = [
   {
     path: '/users',
     route: userRoute,
+  },
+  {
+    path: '/service_station',
+    route: service_station_route,
   },
   {
     path: '/login',

@@ -22,3 +22,4 @@ module.exports.expire_brkge_Service = require('./expire_brkge.service');
 module.exports.customer_leadger_Service = require('./customer_leadger.service');
 module.exports.employee_transection_Service = require('./employee_transection.service');
 module.exports.fuel_transfer_service = require('./fuel_transfer.service');
+module.exports.service_station_service = require('./service_station.service');
